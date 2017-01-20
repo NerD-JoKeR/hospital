@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Отделение специализированной помощи</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        .fig {
+            text-align: center; /* Выравнивание по центру */
+        }
+    </style>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading fig">
+        <h3 th:text="${departmentName}"/>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr class="info">
+            <th>Кабинет</th>
+            <th>Спецальность - қызметі</th>
+            <th>ФИО Врача - Аты-жөні</th>
+            <th>ПН-ДС</th>
+            <th>ВТ-СС</th>
+            <th>СР-СР</th>
+            <th>ЧТ-БС</th>
+            <th>ПТ-ЖМ</th>
+            <th>СБ-СН</th>
+            <th>ВС-ЖК</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="result : ${resultsList}">
+            <td></td>
+            <td th:text="${result.position}"/>
+            <td th:text="${result.nameInic}"/>
+            <td th:text="${result.day1}" th:classappend="${weekday == 2} ? success : asdf"/>
+            <td th:text="${result.day2}" th:classappend="${weekday == 3} ? success : asdf"/>
+            <td th:text="${result.day3}" th:classappend="${weekday == 4} ? success : asdf"/>
+            <td th:text="${result.day4}" th:classappend="${weekday == 5} ? success : asdf"/>
+            <td th:text="${result.day5}" th:classappend="${weekday == 6} ? success : asdf"/>
+            <td th:text="${result.day6}" th:classappend="${weekday == 7} ? success : asdf"/>
+            <td th:text="${result.day7}" th:classappend="${weekday == 1} ? success : asdf"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
+
