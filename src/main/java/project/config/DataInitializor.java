@@ -16,8 +16,8 @@ public class DataInitializor {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriverClass(org.postgresql.Driver.class);
         dataSource.setUsername("postgres");
-        dataSource.setUrl("jdbc:postgresql://localhost:7711/hospital");
-        dataSource.setPassword("Kanzhar7");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/hospital");
+        dataSource.setPassword("root");
 
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
