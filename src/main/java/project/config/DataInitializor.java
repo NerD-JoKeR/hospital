@@ -13,6 +13,8 @@ public class DataInitializor {
     public void init() {
         // TODO создать в POSTGRES crud и  заполнить его PERSONS , DEPARTMENTS, WORKTIME ТАБЛИЦЫ
 
+        System.out.println("filling tables");
+
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriverClass(org.postgresql.Driver.class);
         dataSource.setUsername("postgres");
@@ -21,7 +23,7 @@ public class DataInitializor {
 
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        System.out.println("filling tables");
+
 
         // ("CREATE TABLE departments (id serial, name varchar(256),PRIMARY KEY (id))");
         jdbcTemplate.update("INSERT INTO departments(id, name) values ('1', 'Отделение специализированной помощи')");
